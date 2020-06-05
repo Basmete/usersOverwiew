@@ -39,7 +39,7 @@ class App extends React.Component {
 
   async getDataFromAPI(token) {
     const data = await Axios.get(
-      "http://emphasoft-test-assignment.herokuapp.com/api/v1/users/",
+      "https://emphasoft-test-assignment.herokuapp.com/api/v1/users/",
       {
         headers: {
           Authorization: `Token ${token}`,
