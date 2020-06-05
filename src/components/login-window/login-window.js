@@ -28,7 +28,7 @@ class LoginWindow extends React.Component {
     try {
       const { password, username } = this.state;
       const loginResponse = await axios.post(
-        "http://emphasoft-test-assignment.herokuapp.com/api-token-auth/",
+        "https://emphasoft-test-assignment.herokuapp.com/api-token-auth/",
         {
           username,
           password,
