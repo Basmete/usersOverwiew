@@ -6,8 +6,8 @@ class LoginWindow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "test_super",
-      password: "Nf<U4f<rDbtDxAPn",
+      username: "",
+      password: "",
       isLoginFailed: true
     };
   }
