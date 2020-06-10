@@ -40,14 +40,11 @@ class UsersTable extends Component {
       loading: true,
     });
 
-    setTimeout(() => {
-      console.log(sortColumn);
-      this.setState({
-        sortColumn,
-        sortType,
-        loading: false,
-      });
-    }, 500);
+    this.setState({
+      sortColumn,
+      sortType,
+      loading: false,
+    });
   }
   render() {
     const formatData = this.getData().map((user) => {
@@ -55,12 +52,14 @@ class UsersTable extends Component {
       const isSuperuser = user.is_superuser
         ? "Суперпользователь"
         : "Пользователь";
-      const lastLogin = user.last_login ? `${user.last_login.substr(0,10)}` : "Неизвестно"
+      const lastLogin = user.last_login
+        ? `${user.last_login.substr(0, 10)}`
+        : "Неизвестно";
       const newUser = {
         ...user,
         is_active: isActive,
         is_superuser: isSuperuser,
-        last_login: lastLogin
+        last_login: lastLogin,
       };
       return newUser;
     });
